@@ -1,0 +1,30 @@
+{ 
+	"Dhcp4": { 
+ 		"interfaces-config": { 
+ 			"interfaces": ["eth0"] #A modif
+ 		}, 
+ 	"lease-database": { 
+ 		"type": "memfile", 
+		"lfc-interval": 3600 
+ 		}, 
+ 	"subnet4": [ 
+ 		{ 
+ 			"subnet": "10.0.114.0/26", 
+ 			"pools": [{"pool": "10.0.114.1 - 10.0.114.61"}], 
+ 			"option-data": [ 
+ 				{"name": "routers", "data": "10.0.114.62"}, 
+ 				{"name": "domain-name-servers", "data": "192.168.1.1"}, 
+ 				{"name": "domain-name", "data": "monreseau.local"} 
+ 			] 
+ 		}, 
+ 		{ 
+ 			"subnet": "10.0.114.64/27", 
+ 			"pools": [{"pool": "10.0.114.65 - 10.0.114.93"}], 
+ 			"option-data": [ 
+ 				{"name": "routers", "data": "10.0.114.94"}, 
+ 				{"name": "domain-name-servers", "data": "192.168.2.1"}, 
+ 				{"name": "domain-name", "data": "monreseau.local"} 
+ 			] 
+ 		}
+ 	] 
+ } 
