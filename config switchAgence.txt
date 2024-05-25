@@ -1,4 +1,4 @@
-config switchPC
+config switchAgence
 
 conf t
 line console  0

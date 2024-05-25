@@ -1,0 +1,33 @@
+config switchServer
+
+conf t
+line console  0
+password cisco
+login
+
+service password-encryption
+
+banner motd "You are accessing a retricted system."
+
+configuration des vlan 
+vlan 2
+name EMPLOYER
+vlan 3 
+name INVITE
+vlan 4 
+name SERVEUR
+vlan 5 
+name MANAGEMENT
+exit
+
+interface range ethernet 0/2 - 3
+switchport mode access
+switchport access vlan 4
+interface range ethernet 1/0 - 3
+switchport mode access
+switchport access vlan 4
+
+
+exit
+exit 
+copy running-config startup-config
